@@ -17,13 +17,13 @@ function App() {
       <Router>
         <Nav />
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/mental-health-up/">
             <Home />
           </Route>
-          <Route path="/contact">
+          <Route path="/mental-health-up/contact">
             <Contact />
           </Route>
-          <Route path="/course/:id">
+          <Route path="/mental-health-up/course/:id">
             <Course />
           </Route>
         </Switch>

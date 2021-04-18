@@ -54,7 +54,7 @@ export default function Nav() {
 				<>
 					<div className="max-w-7xl mx-auto px-4 sm:px-6">
 						<div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
-							<Link to="/" className="flex justify-start items-center lg:w-0 lg:flex-1">
+							<Link to="/mental-health-up/" className="flex justify-start items-center lg:w-0 lg:flex-1">
 								<span className="sr-only">Workflow</span>
 								<img
 									className="w-auto sm:h-10 flex-shrink-0 text-indigo-600"
@@ -72,7 +72,7 @@ export default function Nav() {
 								</Popover.Button>
 							</div>
 							<Popover.Group as="nav" className="hidden md:flex space-x-10">
-								<Link className="text-base font-medium text-gray-500 hover:text-gray-900" to="/">Inicio</Link>
+								<Link className="text-base font-medium text-gray-500 hover:text-gray-900" to="/mental-health-up/">Inicio</Link>
 								<Popover className="relative">
 									{({ open }) => (
 										<>
@@ -110,7 +110,7 @@ export default function Nav() {
 													<div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
 														<div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
 															{courses.map((item) => (
-																<Link key={item.id} to={`/course/${item.id}`}
+																<Link key={item.id} to={`/mental-health-up/course/${item.id}`}
 																	onClick={() => buttonEl.current?.click()}
 																	className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
 																	<item.icon className="flex-shrink-0 h-6 w-6 text-indigo-600" aria-hidden="true" />
@@ -127,7 +127,7 @@ export default function Nav() {
 										</>
 									)}
 								</Popover>
-								<Link className="text-base font-medium text-gray-500 hover:text-gray-900" to="/contact">Contacto</Link>
+								<Link className="text-base font-medium text-gray-500 hover:text-gray-900" to="/mental-health-up/contact">Contacto</Link>
 							</Popover.Group>
 							<div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
 								<a href="/" className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
@@ -183,7 +183,7 @@ export default function Nav() {
 									<div className="mt-6">
 										<nav className="grid gap-y-8">
 											{courses.map((item) => (
-												<Link key={item.id} to={`/course/${item.id}`}
+												<Link key={item.id} to={`/mental-health-up/course/${item.id}`}
 													onClick={() => {
 														console.log(buttonEl2)
 														buttonEl2.current?.click()
