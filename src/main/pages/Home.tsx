@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from '../components/Nav';
 
 export default function Home() {
 	return (

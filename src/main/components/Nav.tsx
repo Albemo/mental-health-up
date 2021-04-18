@@ -1,61 +1,42 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment, useRef, useState } from 'react'
+import { Fragment, useRef } from 'react'
 import { Popover, Transition } from '@headlessui/react'
-import {
-	BookmarkAltIcon,
-	CalendarIcon,
-	MenuIcon,
-	PhoneIcon,
-	PlayIcon,
-	ShieldCheckIcon,
-	SupportIcon,
-	XIcon,
-} from '@heroicons/react/outline'
-import { BiGroup, BiTired } from "react-icons/bi";
-import { SiGhostery, SiGofundme } from "react-icons/si";
-import { RiMentalHealthFill } from "react-icons/ri";
-import { GrGroup } from "react-icons/gr";
+import { MenuIcon, XIcon, } from '@heroicons/react/outline'
 import { ChevronDownIcon } from '@heroicons/react/solid'
-import {
-	BrowserRouter as Router,
-	Switch,
-	Route,
-	Link
-} from "react-router-dom";
-import CourseType from '../../types/courseType';
+import { Link } from "react-router-dom";
 import courses from '../../data/courses'
 
 
-const callsToAction = [
-	{ name: 'Watch Demo', href: '#', icon: PlayIcon },
-	{ name: 'Contact Sales', href: '#', icon: PhoneIcon },
-]
-const resources = [
-	{
-		name: 'Help Center',
-		description: 'Get all of your questions answered in our forums or contact support.',
-		href: '#',
-		icon: SupportIcon,
-	},
-	{
-		name: 'Guides',
-		description: 'Learn how to maximize our platform to get the most out of it.',
-		href: '#',
-		icon: BookmarkAltIcon,
-	},
-	{
-		name: 'Events',
-		description: 'See what meet-ups and other events we might be planning near you.',
-		href: '#',
-		icon: CalendarIcon,
-	},
-	{ name: 'Security', description: 'Understand how we take your privacy seriously.', href: '#', icon: ShieldCheckIcon },
-]
-const recentPosts = [
-	{ id: 1, name: 'Boost your conversion rate', href: '#' },
-	{ id: 2, name: 'How to use search engine optimization to drive traffic to your site', href: '#' },
-	{ id: 3, name: 'Improve your customer experience', href: '#' },
-]
+// const callsToAction = [
+// 	{ name: 'Watch Demo', href: '#', icon: PlayIcon },
+// 	{ name: 'Contact Sales', href: '#', icon: PhoneIcon },
+// ]
+// const resources = [
+// 	{
+// 		name: 'Help Center',
+// 		description: 'Get all of your questions answered in our forums or contact support.',
+// 		href: '#',
+// 		icon: SupportIcon,
+// 	},
+// 	{
+// 		name: 'Guides',
+// 		description: 'Learn how to maximize our platform to get the most out of it.',
+// 		href: '#',
+// 		icon: BookmarkAltIcon,
+// 	},
+// 	{
+// 		name: 'Events',
+// 		description: 'See what meet-ups and other events we might be planning near you.',
+// 		href: '#',
+// 		icon: CalendarIcon,
+// 	},
+// 	{ name: 'Security', description: 'Understand how we take your privacy seriously.', href: '#', icon: ShieldCheckIcon },
+// ]
+// const recentPosts = [
+// 	{ id: 1, name: 'Boost your conversion rate', href: '#' },
+// 	{ id: 2, name: 'How to use search engine optimization to drive traffic to your site', href: '#' },
+// 	{ id: 3, name: 'Improve your customer experience', href: '#' },
+// ]
 
 function classNames(...classes: any) {
 	return classes.filter(Boolean).join(' ')
@@ -63,7 +44,6 @@ function classNames(...classes: any) {
 
 export default function Nav() {
 
-	const [isShowing, setIsShowing] = useState(false);
 	const buttonEl = useRef() as React.MutableRefObject<HTMLButtonElement>;
 	const buttonEl2 = useRef() as React.MutableRefObject<HTMLButtonElement>;
 
@@ -78,7 +58,7 @@ export default function Nav() {
 								<span className="sr-only">Workflow</span>
 								<img
 									className="w-auto sm:h-10 flex-shrink-0 text-indigo-600"
-									style={{height:"48px"}}
+									style={{ height: "48px" }}
 									src="mental-health.svg"
 									alt=""
 								/>
@@ -150,11 +130,10 @@ export default function Nav() {
 								<Link className="text-base font-medium text-gray-500 hover:text-gray-900" to="/contact">Contacto</Link>
 							</Popover.Group>
 							<div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-								<a href="#" className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
+								<a href="/" className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
 									Registrarse
                 </a>
-								<a
-									href="#"
+								<a href="/"
 									className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
 								>
 									Iniciar sesión
@@ -219,15 +198,14 @@ export default function Nav() {
 								</div>
 								<div className="py-6 px-5 space-y-6">
 									<div>
-										<a
-											href="#"
+										<a href="/"
 											className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
 										>
 											Iniciar sesión
                     </a>
 										<p className="mt-6 text-center text-base font-medium text-gray-500">
 											No tienes una cuenta?{' '}
-											<a href="#" className="text-indigo-600 hover:text-indigo-500">
+											<a href="/" className="text-indigo-600 hover:text-indigo-500">
 												Registrarse
                       </a>
 										</p>

@@ -1,5 +1,3 @@
-/* This example requires Tailwind CSS v2.0+ */
-import { PaperClipIcon } from '@heroicons/react/solid'
 import {
   useParams
 } from "react-router-dom";
@@ -8,7 +6,7 @@ import courses from '../../data/courses'
 
 export default function Course() {
   const {id} = useParams<any>();
-  let currentCourse: CourseType | undefined = courses.find(x => x.id == id);
+  let currentCourse: CourseType | undefined = courses.find(x => x.id === id);
 
 
   return (
