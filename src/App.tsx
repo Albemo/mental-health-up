@@ -11,6 +11,7 @@ import Contact from './main/pages/Contact';
 import Course from './main/components/Course';
 import Footer from './main/components/Footer';
 
+
 function App() {
   return (
     <div className="app">

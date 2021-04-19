@@ -45,11 +45,10 @@ function classNames(...classes: any) {
 export default function Nav() {
 
 	const buttonEl = useRef() as React.MutableRefObject<HTMLButtonElement>;
-	const buttonEl2 = useRef() as React.MutableRefObject<HTMLButtonElement>;
 
 	return (
 
-		<Popover className="relative bg-white">
+		<Popover className="relative bg-white" style={{ fontFamily: 'Bitter, serif' }}>
 			{({ open }) => (
 				<>
 					<div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -60,12 +59,12 @@ export default function Nav() {
 									className="w-auto sm:h-10 flex-shrink-0 text-indigo-600"
 									style={{ height: "48px" }}
 									src="mental-health.svg"
-									alt=""
+									alt="mental-healt-logo"
 								/>
-								<p className="text-3xl w-full text-indigo-700">Mental Health Up </p>
+								<p className="text-3xl w-full text-gray-900" style={{ fontFamily: 'Libre Baskerville, serif' }}>Mental Health Up </p>
 							</Link>
 
-							<div className="-mr-2 -my-2 md:hidden">
+							<div className="mr-2 -my-2 md:hidden">
 								<Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
 									<span className="sr-only">Open menu</span>
 									<MenuIcon className="h-6 w-6" aria-hidden="true" />
@@ -73,6 +72,7 @@ export default function Nav() {
 							</div>
 							<Popover.Group as="nav" className="hidden md:flex space-x-10">
 								<Link className="text-base font-medium text-gray-500 hover:text-gray-900" to="/mental-health-up/">Inicio</Link>
+								<Link className="text-base font-medium text-gray-500 hover:text-gray-900" to="/mental-health-up/contact">Contacto</Link>
 								<Popover className="relative">
 									{({ open }) => (
 										<>
@@ -127,17 +127,17 @@ export default function Nav() {
 										</>
 									)}
 								</Popover>
-								<Link className="text-base font-medium text-gray-500 hover:text-gray-900" to="/mental-health-up/contact">Contacto</Link>
+
 							</Popover.Group>
 							<div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-								<a href="/" className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
+								<button className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
 									Registrarse
-                </a>
-								<a href="/"
+                </button>
+								<button 
 									className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
 								>
 									Iniciar sesión
-                </a>
+                </button>
 							</div>
 						</div>
 					</div>
@@ -159,21 +159,23 @@ export default function Nav() {
 						<Popover.Panel
 							focus
 							static
-							className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
+							className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden z-10"
 						>
 							<div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
 								<div className="pt-5 pb-6 px-5">
 									<div className="flex items-center justify-between">
-										<div>
+										<div className="flex items-center">
 											<img
-												className="h-1 w-auto sm:h-10 flex-shrink-0 text-indigo-600"
+												className="w-auto sm:h-10 flex-shrink-0 text-indigo-600"
+												style={{ height: "48px" }}
 												src="mental-health.svg"
-												alt=""
+												alt="mental-healt-logo"
 											/>
+											<p className="text-xl w-full text-gray-900" style={{ fontFamily: 'Libre Baskerville, serif' }}>Mental Health Up </p>
 										</div>
-										<div className="mr-2">
+										<div className="">
 											<Popover.Button
-												ref={buttonEl2}
+												id="buttonClose"
 												className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
 												<span className="sr-only">Close menu</span>
 												<XIcon className="h-6 w-6" aria-hidden="true" />
@@ -181,13 +183,20 @@ export default function Nav() {
 										</div>
 									</div>
 									<div className="mt-6">
+										<Link
+											onClick={() => document.getElementById('buttonClose')?.click()}
+											className="text-base font-medium text-gray-500 hover:text-gray-900" to="/mental-health-up/">Inicio</Link>
+									</div>
+									<div className="mt-6">
+										<Link
+											onClick={() => document.getElementById('buttonClose')?.click()}
+											className="text-base font-medium text-gray-500 hover:text-gray-900" to="/mental-health-up/contact">Contacto</Link>
+									</div>
+									<div className="mt-6">
 										<nav className="grid gap-y-8">
 											{courses.map((item) => (
 												<Link key={item.id} to={`/mental-health-up/course/${item.id}`}
-													onClick={() => {
-														console.log(buttonEl2)
-														buttonEl2.current?.click()
-													}}
+													onClick={() => document.getElementById('buttonClose')?.click()}
 													className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50" >
 													<item.icon className="flex-shrink-0 h-6 w-6 text-indigo-600" aria-hidden="true" />
 													<span className="ml-3 text-base font-medium text-gray-900">{item.name}</span>
@@ -198,16 +207,16 @@ export default function Nav() {
 								</div>
 								<div className="py-6 px-5 space-y-6">
 									<div>
-										<a href="/"
+										<button
 											className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
 										>
 											Iniciar sesión
-                    </a>
+                    </button>
 										<p className="mt-6 text-center text-base font-medium text-gray-500">
 											No tienes una cuenta?{' '}
-											<a href="/" className="text-indigo-600 hover:text-indigo-500">
+											<button className="text-indigo-600 hover:text-indigo-500">
 												Registrarse
-                      </a>
+                      </button>
 										</p>
 									</div>
 								</div>
