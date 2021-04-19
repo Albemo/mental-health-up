@@ -6,7 +6,7 @@ export default function Footer() {
     <>
       <div className="grid md:grid-cols-3 sm:grid-cols-3 gap-4 text-white max-w-7xl mx-auto bg-indigo-700 p-5 rounded-lg">
         <div className="justify-self-end">
-          <p>2020 Mental Health Up. All rights reserved</p>
+          <p>2021 Mental Health Up. All rights reserved</p>
         </div>
         <div className="md:flex justify-self-end">
           <div className="md:flex-1 text-right">
